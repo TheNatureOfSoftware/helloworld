@@ -3,6 +3,7 @@ services:
 - docker
 language: bash
 script:
+- docker --version
 - docker build -t thenatureofsoftware/helloworld:latest .
 - >
   if [ "$TRAVIS_BRANCH" == "master" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
