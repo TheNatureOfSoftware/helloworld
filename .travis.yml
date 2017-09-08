@@ -1,7 +1,14 @@
 sudo: required
+
 services:
 - docker
+
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-ce
+
 language: bash
+
 script:
 - docker --version
 - docker build -t thenatureofsoftware/helloworld:latest .
